@@ -1,252 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Portfolio — Ton Prénom Nom</title>
-  <meta name="description" content="Portfolio personnel — projets, compétences et contact.">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio</title>
   <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#7c5cff;
-      --glass: rgba(255,255,255,0.04);
-      --radius:14px; --maxw:1100px;
-      color-scheme: dark;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background:linear-gradient(180deg,#071024 0%, #081426 60%); color:#e6eef8;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      padding:32px 16px;
-      display:flex; justify-content:center;
-    }
-    .wrap{width:100%; max-width:var(--maxw)}
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
-    .logo{display:flex;gap:12px;align-items:center}
-    .avatar{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4cc0ff);display:flex;align-items:center;justify-content:center;font-weight:700}
-    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
-    nav a:hover{color:var(--accent)}
-
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:34px}
-    .card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:0 6px 30px rgba(2,6,23,0.6);}
-    h1{margin:0;font-size:2rem}
-    p.lead{color:var(--muted);margin-top:8px}
-
-    .cta{margin-top:16px;display:flex;gap:10px}
-    .btn{background:linear-gradient(90deg,var(--accent),#4cc0ff);border:none;color:#021023;padding:10px 14px;border-radius:10px;font-weight:600;cursor:pointer}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-
-    .profile-card{display:flex;flex-direction:column;gap:12px}
-    .info-row{display:flex;justify-content:space-between;color:var(--muted);font-size:14px}
-
-    section{margin-bottom:26px}
-    h2{margin:0 0 14px 0;font-size:1.2rem}
-
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .project{overflow:hidden;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px)}
-    .project img{width:100%;height:160px;object-fit:cover;display:block}
-    .project .body{padding:12px}
-    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:var(--glass);color:var(--muted)}
-
-    .grid-2{display:grid;grid-template-columns:1fr 320px;gap:20px}
-    .skills{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:8px 10px;border-radius:10px}
-
-    footer{color:var(--muted);font-size:13px;padding:14px 0;text-align:center}
-
-    /* responsive */
-    @media (max-width:880px){
-      .hero{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-      body{padding:18px}
-      .avatar{width:48px;height:48px}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
     }
 
-    /* small helpers */
-    .muted{color:var(--muted)}
-    a.link{color:var(--accent);text-decoration:none}
+    header {
+      background: #222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    section {
+      background: #fff;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #222;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      border-bottom: 2px solid #222;
+      padding-bottom: 5px;
+    }
+
+    .project {
+      margin-bottom: 15px;
+    }
+
+    .contact a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">
-        <div class="avatar">TN</div>
-        <div>
-          <div style="font-weight:700">Ton Prénom Nom</div>
-          <div class="muted" style="font-size:13px">Étudiant · Développeur · Créatif</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#about">À propos</a>
-        <a href="#projects">Projets</a>
-        <a href="#skills">Compétences</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
 
-    <main>
-      <section class="hero">
-        <div class="card">
-          <h1>Salut — moi c'est Ton Prénom.</h1>
-          <p class="lead">Je crée des projets web et des petites applications. Ici se trouvent mes projets, mon parcours et mes moyens pour me contacter.</p>
-          <div class="cta">
-            <a class="btn" href="#projects">Voir mes projets</a>
-            <a class="btn ghost" href="#contact">Me contacter</a>
-          </div>
+  <header>
+    <h1>Mon Portfolio</h1>
+    <p>Étudiant en 1ʳᵉ année de CPI – Passionné de sciences et de technologie</p>
+  </header>
 
-          <div style="margin-top:18px">
-            <h2 style="font-size:15px;margin-bottom:8px">Dernier projet</h2>
-            <div style="display:flex;gap:12px;align-items:center">
-              <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="miniature" style="width:72px;height:56px;object-fit:cover;border-radius:8px">
-              <div>
-                <div style="font-weight:600">NomDuProjet</div>
-                <div class="muted" style="font-size:13px">Application web — React · Node</div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <section id="presentation">
+    <h2>Présentation</h2>
+    <p>👋 Salut, je m'appelle [Ton Nom].</p>
+    <p>[Petite phrase d’introduction sur toi et ce que tu cherches.]</p>
+  </section>
 
-        <aside class="card profile-card">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <div style="font-weight:700">Ton Prénom Nom</div>
-              <div class="muted" style="font-size:13px">1ère année, CPI — France</div>
-            </div>
-            <div style="text-align:right">
-              <div class="muted">Disponibilité</div>
-              <div style="font-weight:700">Stage / Freelance</div>
-            </div>
-          </div>
+  <section id="formation">
+    <h2>Formation</h2>
+    <p>[Détails sur ta formation, ton école, tes matières principales...]</p>
+  </section>
 
-          <div style="border-top:1px solid rgba(255,255,255,0.03);padding-top:12px">
-            <div class="info-row"><span class="muted">Email</span><span>ton.email@exemple.com</span></div>
-            <div class="info-row" style="margin-top:6px"><span class="muted">Téléphone</span><span>+33 6 12 34 56 78</span></div>
-          </div>
-        </aside>
-      </section>
+  <section id="competences">
+    <h2>Compétences</h2>
+    <ul>
+      <li>Python, HTML/CSS, C</li>
+      <li>NumPy, VS Code, LTSpice</li>
+      <li>Travail en équipe, autonomie, rigueur</li>
+    </ul>
+  </section>
 
-      <section id="about" class="card">
-        <h2>À propos</h2>
-        <p class="muted">Étudiant en première année de CPI, je m'intéresse à la programmation Python, au web, et à l'électronique. J'aime transformer des idées en prototypes fonctionnels et apprendre par projet.</p>
-      </section>
+  <section id="projets">
+    <h2>Projets</h2>
+    <div class="project">
+      <h3>[Nom du projet]</h3>
+      <p>[Courte description du projet, outils utilisés, ce que tu as appris.]</p>
+    </div>
+    <div class="project">
+      <h3>[Autre projet]</h3>
+      <p>[Courte description du projet.]</p>
+    </div>
+  </section>
 
-      <section id="projects">
-        <h2>Projets</h2>
-        <div class="projects">
-          <article class="project card">
-            <img src="https://images.unsplash.com/photo-1526378724969-3d9f7c9b9a3d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Projet 1">
-            <div class="body">
-              <div style="font-weight:700">Calculateur de probabilités</div>
-              <div class="muted" style="font-size:13px;margin-top:6px">Script Python avec interface web. Exercices et simulateur Monte-Carlo.</div>
-              <div class="tags">
-                <span class="tag">Python</span>
-                <span class="tag">Flask</span>
-                <span class="tag">Simulation</span>
-              </div>
-              <div style="margin-top:10px;display:flex;gap:8px">
-                <a class="btn" href="#">Voir démo</a>
-                <a class="btn ghost" href="#">Code</a>
-              </div>
-            </div>
-          </article>
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email : <a href="mailto:tonemail@example.com">tonemail@example.com</a></p>
+    <p>LinkedIn : <a href="#">Mon profil</a></p>
+    <p>GitHub : <a href="#">Mon GitHub</a></p>
+  </section>
 
-          <article class="project card">
-            <img src="https://images.unsplash.com/photo-1523475496153-3d6cc1d9a60a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Projet 2">
-            <div class="body">
-              <div style="font-weight:700">Mini-site portfolio</div>
-              <div class="muted" style="font-size:13px;margin-top:6px">Site statique responsive en HTML/CSS. Animations légères.</div>
-              <div class="tags">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">Responsive</span>
-              </div>
-              <div style="margin-top:10px;display:flex;gap:8px">
-                <a class="btn" href="#">Voir</a>
-                <a class="btn ghost" href="#">Code</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project card">
-            <img src="https://images.unsplash.com/photo-1508881593112-8a0f0d7f0663?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Projet 3">
-            <div class="body">
-              <div style="font-weight:700">Simulateur électronique</div>
-              <div class="muted" style="font-size:13px;margin-top:6px">Petits circuits et visualisation des signaux (Oscillo).</div>
-              <div class="tags">
-                <span class="tag">Electronique</span>
-                <span class="tag">Python</span>
-              </div>
-              <div style="margin-top:10px;display:flex;gap:8px">
-                <a class="btn" href="#">Article</a>
-                <a class="btn ghost" href="#">Repo</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="skills" class="card">
-        <div class="grid-2">
-          <div>
-            <h2>Compétences</h2>
-            <div class="skills" style="margin-top:8px">
-              <div class="skill">Python</div>
-              <div class="skill">NumPy</div>
-              <div class="skill">HTML & CSS</div>
-              <div class="skill">JavaScript</div>
-              <div class="skill">Git</div>
-              <div class="skill">Conception électronique</div>
-            </div>
-
-            <h2 style="margin-top:18px">Formation</h2>
-            <p class="muted" style="margin-top:8px">1ère année CPI — cours: probabilités, algorithmes, électronique analogique.</p>
-          </div>
-
-          <aside class="card">
-            <h2>Contact rapide</h2>
-            <div class="muted" style="font-size:14px;margin-bottom:8px">Envoie un mail ou réserve un créneau pour un appel.</div>
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <a class="btn" href="mailto:ton.email@exemple.com">Envoyer un email</a>
-              <a class="btn ghost" href="#contact">Formulaire</a>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section id="contact" class="card">
-        <h2>Contact</h2>
-        <form onsubmit="handleSubmit(event)" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-          <input type="text" name="name" placeholder="Ton nom" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit;grid-column:span 1">
-          <input type="email" name="email" placeholder="Ton email" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit;grid-column:span 1">
-          <textarea name="message" placeholder="Message" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit;grid-column:span 2;min-height:120px"></textarea>
-          <button class="btn" type="submit" style="grid-column:span 2">Envoyer</button>
-        </form>
-        <p id="note" class="muted" style="margin-top:10px">Remarque: ce formulaire est piloté en front-end; configurez un backend ou remplacez le "onsubmit" par un <code>action="mailto:..."</code> pour l'envoyer par email.</p>
-      </section>
-
-    </main>
-
-    <footer>
-      © <span id="year"></span> Ton Prénom Nom — <span class="muted">Fait avec ♥</span>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    function handleSubmit(e){
-      e.preventDefault();
-      const f=new FormData(e.target);
-      // fallback: ouvrir mailto si pas de backend
-      const subject = encodeURIComponent('Contact portfolio — ' + f.get('name'));
-      const body = encodeURIComponent('Email: '+f.get('email')+"\n\n"+f.get('message'));
-      window.location.href = 'mailto:ton.email@exemple.com?subject='+subject+'&body='+body;
-    }
-  </script>
 </body>
 </html>
