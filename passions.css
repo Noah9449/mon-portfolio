@@ -1,0 +1,92 @@
+:root {
+  --bg: #0f0f0f;
+  --accent: #4f7df0;
+  --text: #f1f1f1;
+  --soft: #cfcfcf;
+  --radius: 18px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", Arial, sans-serif;
+}
+
+
+.passions-section {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.passions-section h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: var(--soft);
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+}
+
+.passions-grid {
+  display: grid;
+  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+
+.passion-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius);
+  padding: 25px;
+  transition: 0.3s;
+}
+
+.passion-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.12);
+}
+
+.passion-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 15px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.passion-card h2 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.passion-card p {
+  color: var(--soft);
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
+
+
+
+.btn-back {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 12px 22px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background: rgba(255,255,255,0.22);
+}

@@ -1,0 +1,63 @@
+:root {
+  --bg: #0f0f0f;
+  --accent: #e63946; 
+  --text: #f1f1f1;
+  --soft: #cfcfcf;
+  --radius: 18px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 25px;
+  list-style: none;
+}
+
+nav a {
+  color: var(--soft);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+}
+
+.project-section {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.project-section h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.project-section p {
+  font-size: 1.2rem;
+  color: var(--soft);
+  margin-bottom: 40px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 60%;
+  max-width: 600px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.2);
+}

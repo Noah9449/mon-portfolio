@@ -1,0 +1,70 @@
+:root {
+  --bg: #0f0f0f;
+  --accent: #4f7df0;
+  --text: #f1f1f1;
+  --soft: #cfcfcf;
+  --radius: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 25px;
+  list-style: none;
+}
+
+nav a {
+  color: var(--soft);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+}
+
+.about-section {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.about-section h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--soft);
+  margin-bottom: 50px;
+}
+
+.about-card {
+  max-width: 750px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  border-radius: var(--radius);
+  line-height: 1.7;
+  font-size: 1.2rem;
+}
+
+.about-card strong {
+  color: var(--accent);
+}

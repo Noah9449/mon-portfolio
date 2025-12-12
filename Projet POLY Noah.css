@@ -1,0 +1,84 @@
+:root {
+  --bg: #0f0f0f;
+  --accent: #4f7df0;
+  --text: #f1f1f1;
+  --soft: #cfcfcf;
+  --radius: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.hero {
+  height: 100vh;
+  background: url('IMAGE.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.3rem;
+  color: var(--soft);
+  margin-bottom: 30px;
+}
+
+.buttons a {
+  text-decoration: none;
+  padding: 14px 26px;
+  border-radius: var(--radius);
+  margin: 10px;
+  font-weight: 600;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.12);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.22);
+}
